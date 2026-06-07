@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom Properties ───────────────────────────── */
+:root {
+  --primary:       #1060a8;
+  --primary-dark:  #0c2444;
+  --primary-light: #1976c8;
+  --gold:          #c8900e;
+  --gold-light:    #f0b92a;
+  --navy:          #0c2444;
+  --text:          #1a2636;
+  --text-muted:    #5c7080;
+  --bg:            #f7f9fd;
+  --white:         #ffffff;
+  --border:        #dde6f0;
+  --section-gap:   5rem;
+}
+
+/* ── Base ────────────────────────────────────────── */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography helpers ──────────────────────────── */
+.font-playfair { font-family: 'Playfair Display', Georgia, serif; }
+.font-devanagari { font-family: 'Noto Sans Devanagari', sans-serif; }
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #eef2f8; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+/* ── Utility classes ────────────────────────────── */
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-badge {
+    @apply inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold
+           bg-primary-50 text-primary-600 border border-primary-100 mb-4 tracking-wide
+           font-devanagari;
+  }
+
+  .section-title {
+    @apply font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-gray-500 text-base sm:text-lg leading-relaxed max-w-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
+           bg-primary-500 hover:bg-primary-600 transition-all duration-300
+           shadow-md hover:shadow-hover hover:-translate-y-0.5 focus:outline-none
+           focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
+           bg-gold-500 hover:bg-gold-600 transition-all duration-300
+           shadow-gold hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
+           border-2 border-white text-white hover:bg-white hover:text-primary-600
+           transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .btn-outline-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
+           border-2 border-primary-500 text-primary-600 hover:bg-primary-500 hover:text-white
+           transition-all duration-300;
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl shadow-card overflow-hidden hover:shadow-hover
+           transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .divider {
+    @apply w-16 h-1 rounded-full bg-gold-500 my-4;
+  }
+
+  .divider-center { @apply mx-auto; }
+
+  .page-hero {
+    @apply relative h-64 sm:h-80 flex items-end overflow-hidden;
+  }
+
+  .page-hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-br from-navy/90 via-primary-500/80 to-primary-400/70;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-600;
+  }
+}
+
+/* ── Page hero parallax bg ───────────────────────── */
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+
+/* ── Hero slider ─────────────────────────────────── */
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: opacity;
+}
+
+/* ── Lightbox ────────────────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.lightbox-img {
+  max-width: min(90vw, 1000px);
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+}
+
+/* ── Stats count animation ───────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.count-animate { animation: countUp 0.6s ease-out both; }
+
+/* ── Timeline line ───────────────────────────────── */
+.timeline-connector {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--gold));
+  transform: translateX(-50%);
+}
+
+/* ── Gallery masonry feel ────────────────────────── */
+.gallery-grid-masonry {
+  columns: 2;
+  column-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .gallery-grid-masonry { columns: 3; }
+}
+@media (min-width: 1024px) {
+  .gallery-grid-masonry { columns: 4; }
+}
+.gallery-grid-masonry .gal-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #f0f4f8 25%, #e0eaf5 50%, #f0f4f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Navbar transition ───────────────────────────── */
+.navbar-scrolled {
+  background: rgba(255,255,255,0.97) !important;
+  box-shadow: 0 2px 20px rgba(16,96,168,0.12) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* ── Mobile menu animation ───────────────────────── */
+.mobile-menu-enter { animation: slideDown 0.3s ease-out; }
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Floating CTA pulse ──────────────────────────── */
+@keyframes ringPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(200,144,14,0.6); }
+  70%  { box-shadow: 0 0 0 14px rgba(200,144,14,0); }
+  100% { box-shadow: 0 0 0 0 rgba(200,144,14,0); }
+}
+.ring-pulse { animation: ringPulse 2.4s infinite; }
