@@ -188,12 +188,4 @@ devakare-hospital-backend/
 
 ---
 
-## Contact
 
-For support or updates, modify the project files and run the app locally.
-
----
-
-## Notes
-
-This README was generated from the current project files in the `Devkare Hospital` workspace.
