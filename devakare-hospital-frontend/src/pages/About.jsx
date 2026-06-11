@@ -112,7 +112,7 @@ export default function About() {
             {/* Image grid */}
             <motion.div
               className="relative"
-              variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportConfig}
+              variants={fadeInLeft} initial="hidden" animate="visible"
             >
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-2xl overflow-hidden col-span-2 aspect-video">
@@ -138,7 +138,7 @@ export default function About() {
             </motion.div>
 
             {/* Content */}
-            <motion.div variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportConfig}>
+            <motion.div variants={fadeInRight} initial="hidden" animate="visible">
               <span className="section-badge">आमच्याबद्दल | About Us</span>
               <h2 className="section-title mb-4">
                 Dedicated to <span className="text-primary-500">Compassionate</span> Healthcare

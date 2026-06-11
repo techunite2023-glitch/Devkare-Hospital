@@ -26,14 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close mobile menu on scroll
-  useEffect(() => {
-    if (open) {
-      const close = () => setOpen(false)
-      window.addEventListener('scroll', close, { once: true })
-    }
-  }, [open])
-
   return (
     <>
       {/* ── Top bar ─────────────────────────── */}

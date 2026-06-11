@@ -209,7 +209,7 @@ export default function Contact() {
         <div className="container-custom">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-12"
-            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={fadeInUp} initial="hidden" animate="visible"
           >
             <span className="section-badge">संपर्क | Get in Touch</span>
             <h2 className="section-title mb-4">
@@ -224,7 +224,7 @@ export default function Contact() {
 
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-            variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={staggerContainer} initial="hidden" animate="visible"
           >
             {contactCards.map((c, i) => (
               <motion.div

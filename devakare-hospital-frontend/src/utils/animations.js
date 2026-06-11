@@ -39,4 +39,6 @@ export const staggerItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 }
 
-export const viewportConfig = { once: true, amount: 0.18 }
+// Mobile-friendly viewport trigger: content animates sooner on small screens
+// Mobile-friendly viewport trigger: animate as soon as any part of the element enters view
+export const viewportConfig = { once: true, amount: 0, margin: '0px 0px -20% 0px' }

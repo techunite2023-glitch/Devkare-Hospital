@@ -146,7 +146,7 @@ export default function Facilities() {
         <div className="container-custom relative z-10">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-10"
-            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={fadeInUp} initial="hidden" animate="visible"
           >
             <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-white mb-3">
               Purpose-Built for <span className="text-gold-light">Patient Care</span>

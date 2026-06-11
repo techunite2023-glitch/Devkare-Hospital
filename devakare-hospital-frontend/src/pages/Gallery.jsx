@@ -96,7 +96,6 @@ const allImages = [
 
 // ── Categories ─────────────────────────────────────────────────────────────
 const categories = [
-  { id: 'all',            label: 'All Photos',      marathi: 'सर्व' },
   { id: 'infrastructure', label: 'Infrastructure',  marathi: 'इमारत' },
   { id: 'facilities',     label: 'Facilities',      marathi: 'सुविधा' },
   { id: 'procedures',     label: 'Procedures',      marathi: 'प्रक्रिया' },
@@ -165,12 +164,10 @@ function Lightbox({ images, index, onClose, onNext, onPrev }) {
 
 // ═══════════════════════════════════════════════════════════════════════════
 export default function Gallery() {
-  const [activeCat, setActiveCat] = useState('all')
+  const [activeCat, setActiveCat] = useState('infrastructure')
   const [lightboxIdx, setLightboxIdx] = useState(null)
 
-  const filtered = activeCat === 'all'
-    ? allImages
-    : allImages.filter(img => img.cat === activeCat)
+  const filtered = allImages.filter(img => img.cat === activeCat)
 
   const openLightbox = useCallback((i) => setLightboxIdx(i), [])
   const closeLightbox = useCallback(() => setLightboxIdx(null), [])
@@ -193,7 +190,7 @@ export default function Gallery() {
         <div className="container-custom">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-10"
-            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={fadeInUp} initial="hidden" animate="visible"
           >
             <span className="section-badge">गॅलरी | Photo Gallery</span>
             <h2 className="section-title mb-4">
@@ -209,7 +206,7 @@ export default function Gallery() {
           {/* Category Tabs */}
           <motion.div
             className="flex flex-wrap justify-center gap-2 mb-10"
-            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={fadeInUp} initial="hidden" animate="visible"
           >
             {categories.map((cat) => (
               <button

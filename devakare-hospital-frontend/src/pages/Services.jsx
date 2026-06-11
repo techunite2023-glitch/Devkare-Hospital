@@ -252,7 +252,7 @@ export default function Services() {
         <div className="container-custom">
           <motion.div
             className="text-center max-w-3xl mx-auto mb-14"
-            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={fadeInUp} initial="hidden" animate="visible"
           >
             <span className="section-badge">सेवा | Medical Services</span>
             <h2 className="section-title mb-4">

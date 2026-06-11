@@ -188,10 +188,10 @@ export default function Home() {
         whileInView="visible"
         viewport={viewportConfig}
       >
-        <div className="container-custom">
+        <div className="container-custom b">
           <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100">
             {stats.map((s, i) => (
-              <motion.div key={i} variants={staggerItem} className="flex items-center gap-4 px-4 py-7 sm:px-8">
+              <motion.div key={i} variants={staggerItem} className="flex items-center gap-3 px-3 py-6 sm:px-4 min-w-0">
                 <div className="w-14 h-14 rounded-2xl bg-primary-50 text-primary-500 flex items-center justify-center flex-shrink-0">
                   {s.icon}
                 </div>

@@ -130,7 +130,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-white/50">
           <p>© {new Date().getFullYear()} Devkare Hospital Laparoscopy &amp; Maternity Center. All Rights Reserved.</p>
-          <p className="font-devanagari">सर्व हक्क राखीव | देवकरे हॉस्पिटल, मिरज</p>
+          <p className="font-devanagari">सर्व हक्क राखीव | देवकारे हॉस्पिटल, मिरज</p>
         </div>
       </div>
     </footer>

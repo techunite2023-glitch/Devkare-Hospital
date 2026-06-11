@@ -18,7 +18,7 @@ const doctors = [
   {
     id: 1,
     name: 'Dr. Vikas Devakare',
-    nameMarathi: 'डॉ. विकास देवकरे',
+    nameMarathi: 'डॉ. विकास देवकारे',
     photo: '/images/infrastructure/doctorcabin.jpeg',
     role: 'Founder & Chief Surgeon',
     roleMarathi: 'संस्थापक आणि मुख्य शल्यचिकित्सक',
@@ -101,7 +101,7 @@ export default function Doctors() {
         <div className="container-custom">
           <motion.div
             className="text-center max-w-3xl mx-auto"
-            variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig}
+            variants={fadeInUp} initial="hidden" animate="visible"
           >
             <span className="section-badge">आमचे तज्ञ | Meet Our Experts</span>
             <h2 className="section-title mb-4">
