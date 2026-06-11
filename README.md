@@ -87,18 +87,7 @@ npm install
 
 Create or update `devakare-hospital-backend/.env` with real credentials.
 
-Example:
 
-```env
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-gmail-app-password
-NOTIFY_TO=staff@example.com
-FROM_NAME=Devkare Hospital
-PORT=5000
-CLIENT_URL=http://localhost:5173
-```
-
-> Do not commit `.env` to version control.
 
 ### 5. Run the applications
 
